@@ -12,4 +12,6 @@ $ git branch
 
   Комит в ветку
 $ git commit -m '<information about commit>'
-13
+
+  Пуш в ветку
+$ git  push origin/<ame of branch> 
