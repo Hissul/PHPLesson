@@ -1,0 +1,15 @@
+Добавление ветки 
+$ git branch <name of new branch>
+
+  Переход в ветку
+$ git checkout <name of branch>
+
+  Создать ветку и перейти в нее
+$ git checkout branch <name of new branch> 
+
+  Отобразить все ветки
+$ git branch
+
+  Комит в ветку
+$ git commit -m '<information about commit>'
+13
