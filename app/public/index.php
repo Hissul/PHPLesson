@@ -91,6 +91,8 @@ echo "list";
 
 echo "<br>";
 
+echo("test !!!!!!");
+
 foreach($array as list($a)){
     print_r($a);
 }
@@ -111,4 +113,4 @@ $func = function(int $a = 0, int $b = 0): int {
 
 };
 
-$fucn(1,2);
+//$fucn(1,2);
