@@ -4,16 +4,16 @@ class Get
 {
     public array $array = [];
 
-    public function __construct($_FILES)
+    public function __construct($files)
     {
-        foreach($_FILES as $key => $value){
+        foreach($files['key'] as $key => $value){
             $this->array[$key] = $value;
         }
         
     }
 
     public function has($key): bool{
-        return array_key_exists($key, $this->array);
+        return key_exists($key['key'], $this->array);
     }
 
     public function get($key)

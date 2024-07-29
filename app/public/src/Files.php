@@ -11,20 +11,14 @@ class Files
 
     public function __construct($files)
     {
-        foreach($files as $key => $value){
+        foreach($files['key'] as $key => $value){
             $this->array[$key] = $value;
         }
         
     }
 
-    public function has($key): bool{
-        if(array_key_exists($key, $this->array)){
-            return true;
-        }
-        else{
-            return false;
-        }
-        
+    public function has($key): bool{       
+        return key_exists($key, $this->array);     
     }
 
     public function get($key)
@@ -38,8 +32,13 @@ class Files
     }
 
     public function moveTo($file, string $path)
-    {
-        
+    {        
+        if($file['error'] == UPLOAD_ERR_OK){
+            $tmpName = $file['tmp_name'];
+
+            $name = basename($file['name']);
+            move_uploaded_file($tmpName, $path.$name);
+        }
     }
 
 }

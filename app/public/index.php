@@ -1,15 +1,14 @@
 <?php
 
+include ('../public/src/Request.php');
 
-//print_r($_FILES);
+$request = new Request();
 
-include ('../public/src/Files.php');
+print_r($request->files->array);
+var_dump($request->files->has('error'));
 
+$newDir = '../public/downloads/';
 
-
-
-
-$fl = new Files($_FILES);
-print_r($fl->array);
-
-print_r ($fl->has("name"));
+// не перемещает файл ... 
+// Failed to open stream:No such file or directory in /app/public/src/Files.php on line 40
+$request->files->moveTo($request->files->array, $newDir);

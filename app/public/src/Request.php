@@ -2,9 +2,9 @@
 
 
 
-include ('../src/Get.php');
-include ('../src/Post.php');
-include ('../src/Files.php');
+include ('../public/src/Get.php');
+include ('../public/src/Post.php');
+include ('../public/src/Files.php');
 
 // $get = new Get($_FILES);
 // $post = new Post($_FILES);
@@ -12,15 +12,18 @@ include ('../src/Files.php');
 
 
 
-class Reques
+class Request
 {
-    // $ggg = new Get($_FILES);
-    // var $post = new Post($_FILES);
-    // var $files = new Files($_FILES);
+    public $get ;
+    public $post ;
+    public $files ;
+
+    public function __construct()
+    {
+        $this->get = new Get($_FILES);
+        $this->post = new Post($_FILES);
+        $this->files = new Files($_FILES);
+    }
 }
 
 
-
-print_r($_GET);
-print_r($_POST);
-print_r($_FILES);
