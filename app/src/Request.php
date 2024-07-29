@@ -20,6 +20,6 @@ class Reques
 }
 
 $request = new Reques();
-//$request::$get->has("name");
+$request::$get->has("name");
 
 print_r($_FILES);
