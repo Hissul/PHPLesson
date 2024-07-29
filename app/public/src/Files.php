@@ -1,7 +1,13 @@
 <?php
 
+include ('../src/File.php');
+
+$f = new File();
+
 class Files
 {
+    
+
     public array $array = [];
 
     public function __construct($_FILES)
