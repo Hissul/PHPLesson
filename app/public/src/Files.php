@@ -4,16 +4,19 @@ class Files
 {
     public array $array = [];
 
-    function __construct($_FILES)
+    public function __construct($_FILES)
     {
-        $this->array = $arr;
+        foreach($_FILES as $key => $value){
+            $this->array[$key] = $value;
+        }
+        
     }
 
-    function has($key): bool{
+    public function has($key): bool{
         return array_key_exists($key, $this->array);
     }
 
-    function get($key)
+    public function get($key)
     {
         if($this->has($key)){
             return $this->array[$key];
@@ -21,6 +24,11 @@ class Files
         else{
             throw new Exception("Element is missing");
         }
+    }
+
+    public function moveTo($file, string $path)
+    {
+        
     }
 
 }
