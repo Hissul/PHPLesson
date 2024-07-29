@@ -1,6 +1,6 @@
 <?php
 
-class Files
+class File
 {
     private string $name;
     private string $type;

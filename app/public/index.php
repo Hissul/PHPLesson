@@ -101,16 +101,16 @@ function nameFunction($a, $b){
 
 }
 
-function nameFunction1 (int $a, int $b): int{
+// function nameFunction1 (int $a, int $b): int{
 
-}
+// }
 
-function nameFunction2 (int $a = 0, int $b = 0): int{
+// function nameFunction2 (int $a = 0, int $b = 0): int{
 
-}
+// }
 
-$func = function(int $a = 0, int $b = 0): int {
+// $func = function(int $a = 0, int $b = 0): int {
 
-};
+// };
 
 //$fucn(1,2);

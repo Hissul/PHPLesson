@@ -2,7 +2,7 @@
 
 include ('../src/File.php');
 
-$f = new File();
+$file = new File($_FILES['name'],$_FILES['type'],$_FILES['tmp_name'],$_FILES['error'],$_FILES['size']);
 
 class Files
 {
