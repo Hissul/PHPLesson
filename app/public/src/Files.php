@@ -1,25 +1,30 @@
 <?php
 
-include ('../src/File.php');
+include ('../public/src/File.php');
 
-$file = new File($_FILES['name'],$_FILES['type'],$_FILES['tmp_name'],$_FILES['error'],$_FILES['size']);
+$file = new File($_FILES['key']['name'],$_FILES['key']['type'],$_FILES['key']['tmp_name'],
+                $_FILES['key']['error'],$_FILES['key']['size']);
 
 class Files
-{
-    
-
+{  
     public array $array = [];
 
-    public function __construct($_FILES)
+    public function __construct($files)
     {
-        foreach($_FILES as $key => $value){
+        foreach($files as $key => $value){
             $this->array[$key] = $value;
         }
         
     }
 
     public function has($key): bool{
-        return array_key_exists($key, $this->array);
+        if(array_key_exists($key, $this->array)){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
 
     public function get($key)

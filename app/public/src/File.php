@@ -2,13 +2,13 @@
 
 class File
 {
-    private string $name;
-    private string $type;
-    private string $tmp_name;
-    private string $error;
-    private string $size;
+    private  $name;
+    private  $type;
+    private  $tmp_name;
+    private  $error;
+    private  $size;
 
-    public function __construct(string $name, string $type, string $tmp_name, string $error, string $size)
+    public function __construct( $name, $type, $tmp_name, $error, $size)
     {
         $this->name = $name;
         $this->type = $type;
