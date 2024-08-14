@@ -1,4 +1,6 @@
 # PHPLesson
+
+
 <!-- генерирует ssh ключ  -->
 ssh-keygen -t rsa 
 <!--  -->
@@ -8,7 +10,6 @@ cat .ssh/id_rsa.pub
 mkdir Progects
 cd Progects
 git clone git@github.com:Hissul/PHPLesson.git
-
 
 
 chmod +x docker-entrypoint.sh
@@ -34,6 +35,12 @@ git config --global user.email "masstadontt@rambler.ru'
 git config --global user.name "Hissul"
 git commit . -m "base Base docker compose container. app and webserver"
 git push origin base
+
+
+docker ps - список контейнеров
+docker exec -it lesson_20240710_app bash - в контейнер
+
+echo "Hello world!" >  newFile.txt - создаем файл в контейнере
 
 
 
