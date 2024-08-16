@@ -26,7 +26,8 @@ class Main
 
         if($base){
             $class = implode('\\',$namespace ). '\\' . $base[0];
-            echo $class;
+            
+            $object = new $class();
         }
        
     }
