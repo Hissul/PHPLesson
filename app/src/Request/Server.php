@@ -4,7 +4,7 @@ namespace Request;
 
 use Exception;
 
-class Get
+class Server
 {
     private array $data;
 
