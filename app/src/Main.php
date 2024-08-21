@@ -16,6 +16,8 @@ class Main
 
     private Route $route;
 
+
+
     public function main(): void
     {
         $this->init();
@@ -28,8 +30,10 @@ class Main
             $class = implode('\\',$namespace ). '\\' . $base[0];
             
             $object = new $class();
-        }
-       
+            $object -> getRequest($this->get);            
+        }       
+
+        print_r($this->route->getParent());
     }
 
 
