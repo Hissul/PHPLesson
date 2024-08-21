@@ -42,6 +42,11 @@ docker exec -it lesson_20240710_app bash - в контейнер
 
 echo "Hello world!" >  newFile.txt - создаем файл в контейнере
 
+env | sort - в контейнере (список переменных)
+
+env | grep DATABASE - в контейнере (поиск)
+
+
 
 
 

@@ -12,6 +12,10 @@ RUN useradd -g $DOCKER_GUID -u $DOCKER_ID docker
 
 COPY .docker/app/docker-entrypoint.sh /docker-entrypoint.sh
 
+RUN apt-get update && apt-get install -y libpq-dev
+
+RUN docker-php-ext-configure pdo_pgsql && docker-php-ext-instell pro_pgsql
+
 # переключаемся на пользователя
 USER docker
 
