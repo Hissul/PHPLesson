@@ -1,21 +1,16 @@
 <?php
 
-include ('../src/Request/Autoload.php');
-
 use Request\Autoload;
 
 class Main
-{   
+{ 
     private Autoload $autoload;
-
-    public function __construct()
-    {
-        $this->autoload = new Autoload();
-    }
 
     public function main(): void
     {
-        $this->autoload -> init();
+        $this->init(); 
+
+        $this->autoload->init();
 
         $namespace = $this->autoload->getRoute()->getParent();
 
@@ -29,5 +24,22 @@ class Main
         }       
 
         print_r($this->autoload->getRoute()->getParent());
+    }
+
+
+    private function init() : void
+    {
+        spl_autoload_register(function($class){
+            $file = __DIR__ . '/' . str_replace('\\','/', $class).'.php';  
+
+            if(file_exists($file)){                
+                include($file);
+                return true;
+            }
+
+            return false;
+        });
+
+        $this->autoload = new Autoload();
     }
 }

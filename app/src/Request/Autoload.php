@@ -2,11 +2,6 @@
 
 namespace Request;
 
-// include ('Get.php');
-// include ('Post.php');
-// include ('Server.php');
-// include ('../Routing/Route.php');
-
 use Request\Get;
 use Request\Post;
 use Request\Server;
