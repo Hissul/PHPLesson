@@ -3,6 +3,8 @@
 namespace Controllers\Api;
 
 use Request\Post;
+use Database\DB;
+use Models\User;
 
 class Login
 {
@@ -14,6 +16,8 @@ class Login
 
     public function postRequest(Post $request) : string
     {
-        return print_r($request, true);
+        $allUsers = User::getAllUsers();
+        print_r($allUsers);
+        return  '';
     }
 }

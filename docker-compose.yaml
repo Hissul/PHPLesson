@@ -10,6 +10,7 @@ services:
     volumes:
       - ./app:/app
     environment:
+      PASSWORD_SALT: qwerty
       DATABASE_USERNAME: db_user
       DATABASE_PASSWORD: db_pass
       DATABASE_DB: app
