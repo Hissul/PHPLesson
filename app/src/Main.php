@@ -1,10 +1,17 @@
 <?php
 
+include ('../src/Request/Autoload.php');
+
 use Request\Autoload;
 
 class Main
 {   
-    private Autoload $autoload = new Autoload();
+    private Autoload $autoload;
+
+    public function __construct()
+    {
+        $this->autoload = new Autoload();
+    }
 
     public function main(): void
     {
