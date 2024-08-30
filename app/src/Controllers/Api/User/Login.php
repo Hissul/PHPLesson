@@ -2,10 +2,12 @@
 
 namespace Controllers\Api\User;
 
+use Request\Post;
+
 class Login
 {    
-    public function getRequest()
+    public function postRequest(Post $request) : void
     {
-        echo 'Salute';
-    }  
+        echo("You are inside Controllers\Api\User\Login");        
+    } 
 }
