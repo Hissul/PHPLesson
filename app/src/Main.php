@@ -20,13 +20,13 @@ class Main
     {
         $this->init();
 
-        $namespace = $this->route->getParent();
+        $namespace = $this->pathHandler->remakePath($this->route->getParent());
 
-        $base = $this->route->getBase();
+        $base = $this->pathHandler->remakePath($this->route->getBase());
 
         if($base){
             $class = 'Controllers\\' . implode('\\',$namespace ). '\\' . $base[0];
-            
+             
             $object = new $class();
 
             if($this->server->isGet()){
@@ -37,9 +37,8 @@ class Main
             }
         }
 
-        print_r($this->pathHandler->remakePath());
+        //print_r($this->pathHandler->remakePath());
     }
-
 
     private function init() : void
     {
@@ -47,6 +46,7 @@ class Main
             $file = __DIR__ . '/' . str_replace('\\','/', $class).'.php';  
 
             if(file_exists($file)){                
+                         
                 include($file);
                 return true;
             }
