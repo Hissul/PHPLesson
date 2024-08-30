@@ -6,11 +6,17 @@ use Request\Get;
 use Request\Post;
 use Request\Server;
 use Routing\Route;
-use Shop\Customer\Order;
 use PathHandler\PathHandler;
 
 class Main
 {  
+    private Get $get;
+
+    private Post $post;
+
+    private Server $server;
+
+    private Route $route;
     private PathHandler $pathHandler;
 
     public function main(): void
