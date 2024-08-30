@@ -6,6 +6,10 @@ use Exception;
 
 class Server
 {
+    private const REQUEST_METHOD_GET = 'GET';
+
+    private const REQUEST_METHOD_POST = 'POST';
+
     private array $data;
 
     public function __construct(array $data)
@@ -33,4 +37,27 @@ class Server
         return $this->data;
     }
 
+    /**
+     * @return string
+     */
+    public function requestMethod() : string
+    {
+        return $this->data['REQUEST_METHOD'] ?? '';    
+    }
+
+     /**
+     * @return bool
+     */
+    public function isGet() : bool 
+    {
+        return $this->requestMethod() === self::REQUEST_METHOD_GET;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPost() : bool 
+    {
+        return $this->requestMethod() === self::REQUEST_METHOD_POST;
+    }
 }

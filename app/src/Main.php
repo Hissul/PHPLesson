@@ -11,11 +11,8 @@ use PathHandler\PathHandler;
 class Main
 {  
     private Get $get;
-
     private Post $post;
-
     private Server $server;
-
     private Route $route;
     private PathHandler $pathHandler;
 
