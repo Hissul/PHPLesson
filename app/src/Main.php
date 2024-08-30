@@ -17,6 +17,23 @@ class Main
     {
         $this->init();
 
+        $namespace = $this->route->getParent();
+
+        $base = $this->route->getBase();
+
+        if($base){
+            $class = 'Controllers\\' . implode('\\',$namespace ). '\\' . $base[0];
+            
+            $object = new $class();
+
+            if($this->server->isGet()){
+                echo $object -> getRequest($this->get);     
+            } 
+            elseif($this->server->isPost()){
+                echo $object -> postRequest($this->post); 
+            }
+        }
+
         print_r($this->pathHandler->remakePath());
     }
 
