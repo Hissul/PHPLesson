@@ -14,7 +14,9 @@ class PathHandler
     }
 
 
-    // 
+    /**
+     * @return string
+     */
     public function remakePath():string
     {
         $parent = $this->route->getParent();
@@ -29,7 +31,7 @@ class PathHandler
 
                 foreach($arr as $v){
                     $newStr = ucfirst($v); // first later  to upper                    
-                    $resultStr = $resultStr . $$newStr;
+                    $resultStr = $resultStr . $newStr;
                 }
                 $resultStr = $resultStr . "\\";
             }
