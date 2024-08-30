@@ -51,6 +51,12 @@ class Main
             return false;
         }); 
 
+        $this->get = new Get($_GET);
+        $this->post = new Post($_POST);
+        $this->server = new Server($_SERVER);
+
+        $this->route = new Route($_SERVER['REQUEST_URI']);
+
         $this->pathHandler = new PathHandler($_SERVER['REQUEST_URI']);
     }
 
