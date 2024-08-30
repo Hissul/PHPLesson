@@ -1,39 +1,23 @@
 <?php
 
+include ('../PathHandler/PathHandler.php');
+
 use Request\Get;
 use Request\Post;
 use Request\Server;
 use Routing\Route;
 use Shop\Customer\Order;
+use PathHandler\PathHandler;
 
 class Main
-{   
-    private Get $get;
-
-    private Post $post;
-
-    private Server $server;
-
-    private Route $route;
-
-
+{  
+    private PathHandler $pathHandler;
 
     public function main(): void
     {
         $this->init();
 
-        $namespace = $this->route->getParent();
-
-        $base = $this->route->getBase();
-
-        if($base){
-            $class = implode('\\',$namespace ). '\\' . $base[0];
-            
-            $object = new $class();
-            $object -> getRequest($this->get);            
-        }       
-
-        print_r($this->route->getParent());
+        print_r($this->pathHandler->remakePath());
     }
 
 
@@ -48,13 +32,9 @@ class Main
             }
 
             return false;
-        });
+        }); 
 
-        $this->get = new Get($_GET);
-        $this->post = new Post($_POST);
-        $this->server = new Server($_SERVER);
-
-        $this->route = new Route($_SERVER['REQUEST_URI']);
+        $this->pathHandler = new PathHandler($_SERVER['REQUEST_URI']);
     }
 
 
