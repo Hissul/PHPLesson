@@ -44,14 +44,31 @@ class DB
     {
         $result = $this->pdo->query($sql);
         $result->setFetchMode(PDO::FETCH_CLASS, $class);
+      
 
         $list = [];
 
-        foreach($result as $item){
+        foreach($result as $item){            
             $list[] = $item;
         }
 
         return $list;
     }
+
+    public function getSingleRowByClass(string $sql, string $class): mixed {
+
+        $result = $this->pdo->query($sql);
+        $result->setFetchMode(PDO::FETCH_CLASS, $class);
+        
+        $tmp = [];
+
+        foreach($result as $item){            
+            $tmp = $item;
+        }        
+
+        return $tmp;       
+    }
+
+    
 
 }

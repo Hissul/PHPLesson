@@ -4,7 +4,7 @@ use Request\Get;
 use Request\Post;
 use Request\Server;
 use Routing\Route;
-use Shop\Customer\Order;
+use Models\User;
 
 class Main
 {   
@@ -34,12 +34,10 @@ class Main
             if($this->server->isGet()){
                 echo $object -> getRequest($this->get);     
             } 
-            elseif($this->server->isPost()){
+            elseif($this->server->isPost()){               
                 echo $object -> postRequest($this->post); 
             }
-        }       
-
-        //print_r($this->route->getParent());
+        }  
     }
 
 
