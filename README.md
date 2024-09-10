@@ -18,6 +18,7 @@ ls -la docker-entrypoint.sh
 
 docker compose build
 docker compose up
+docker compose build --no-cache
 
 
 sudo chown alexander:alexander app
